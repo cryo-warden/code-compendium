@@ -6,31 +6,73 @@ mod tests {
     fn test_add() {
         let v1 = Vector(1.0, 2.0);
         let v2 = Vector(3.0, 4.0);
-        let result = v1.add(&v2);
+        let result = v1 + v2;
+        assert_eq!(v1, Vector(1.0, 2.0));
+        assert_eq!(v2, Vector(3.0, 4.0));
         assert_eq!(result, Vector(4.0, 6.0));
+
+        let mut v3 = Vector(1.0, 2.0);
+        v3 += v2;
+        assert_eq!(v3, Vector(4.0, 6.0));
     }
 
     #[test]
     fn test_subtract() {
         let v1 = Vector(1.0, 2.0);
         let v2 = Vector(3.0, 4.0);
-        let result = v1.subtract(&v2);
+        let result = v1 - v2;
+        assert_eq!(v1, Vector(1.0, 2.0));
+        assert_eq!(v2, Vector(3.0, 4.0));
         assert_eq!(result, Vector(-2.0, -2.0));
+
+        let mut v3 = Vector(1.0, 2.0);
+        v3 -= v2;
+        assert_eq!(v3, Vector(-2.0, -2.0));
     }
 
     #[test]
     fn test_scale() {
-        let v = Vector(1.0, 2.0);
-        let result = v.scale(3.0);
+        let v1 = Vector(1.0, 2.0);
+        let result = v1 * 3.0;
+        assert_eq!(v1, Vector(1.0, 2.0));
         assert_eq!(result, Vector(3.0, 6.0));
+
+        let mut v2 = Vector(1.0, 2.0);
+        v2 *= 3.0;
+        assert_eq!(v2, Vector(3.0, 6.0));
+
+        let v3 = Vector(1.0, 2.0);
+        let result = 3.0 * v3;
+        assert_eq!(v3, Vector(1.0, 2.0));
+        assert_eq!(result, Vector(3.0, 6.0));
+
+        let v4 = Vector(1.0, 2.0);
+        let result = v4 / 3.0;
+        assert_eq!(v4, Vector(1.0, 2.0));
+        assert_eq!(result, Vector(1.0 / 3.0, 2.0 / 3.0));
+
+        let mut v5 = Vector(1.0, 2.0);
+        v5 /= 3.0;
+        assert_eq!(v5, Vector(1.0 / 3.0, 2.0 / 3.0));
+
+        let v6 = Vector(1.0, 2.0);
+        let result = -v6;
+        assert_eq!(v6, Vector(1.0, 2.0));
+        assert_eq!(result, Vector(-1.0, -2.0));
     }
 
     #[test]
     fn test_multiply() {
         let v1 = Vector(1.0, 2.0);
         let v2 = Vector(3.0, 4.0);
-        let result = v1.multiply(&v2);
+        let result = v1 * v2;
+        assert_eq!(v1, Vector(1.0, 2.0));
+        assert_eq!(v2, Vector(3.0, 4.0));
         assert_eq!(result, Vector(-5.0, 10.0));
+
+        let mut v3 = Vector(1.0, 2.0);
+        v3 *= v2;
+        assert_eq!(v3, Vector(-5.0, 10.0));
     }
 
     #[test]

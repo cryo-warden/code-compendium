@@ -56,3 +56,89 @@ impl Display for Vector {
         write!(f, "Vector ({}, {})", self.0, self.1)
     }
 }
+
+impl core::ops::Add<Vector> for Vector {
+    type Output = Vector;
+
+    fn add(self, other: Vector) -> Vector {
+        self.add(&other)
+    }
+}
+
+impl core::ops::Sub<Vector> for Vector {
+    type Output = Vector;
+
+    fn sub(self, other: Vector) -> Vector {
+        self.subtract(&other)
+    }
+}
+
+impl core::ops::Mul<f32> for Vector {
+    type Output = Vector;
+
+    fn mul(self, scalar: f32) -> Vector {
+        self.scale(scalar)
+    }
+}
+
+impl core::ops::Mul<Vector> for f32 {
+    type Output = Vector;
+
+    fn mul(self, vector: Vector) -> Vector {
+        vector.scale(self)
+    }
+}
+
+impl core::ops::Div<f32> for Vector {
+    type Output = Vector;
+
+    fn div(self, scalar: f32) -> Vector {
+        self.scale(1.0 / scalar)
+    }
+}
+
+impl core::ops::Neg for Vector {
+    type Output = Vector;
+
+    fn neg(self) -> Vector {
+        self.scale(-1.0)
+    }
+}
+
+impl core::ops::Mul<Vector> for Vector {
+    type Output = Vector;
+
+    fn mul(self, other: Vector) -> Vector {
+        self.multiply(&other)
+    }
+}
+
+impl core::ops::AddAssign<Vector> for Vector {
+    fn add_assign(&mut self, other: Vector) {
+        *self = self.add(&other);
+    }
+}
+
+impl core::ops::SubAssign<Vector> for Vector {
+    fn sub_assign(&mut self, other: Vector) {
+        *self = self.subtract(&other);
+    }
+}
+
+impl core::ops::MulAssign<f32> for Vector {
+    fn mul_assign(&mut self, scalar: f32) {
+        *self = self.scale(scalar);
+    }
+}
+
+impl core::ops::DivAssign<f32> for Vector {
+    fn div_assign(&mut self, scalar: f32) {
+        *self = self.scale(1.0 / scalar);
+    }
+}
+
+impl core::ops::MulAssign<Vector> for Vector {
+    fn mul_assign(&mut self, other: Vector) {
+        *self = self.multiply(&other);
+    }
+}
