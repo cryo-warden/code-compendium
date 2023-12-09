@@ -20,7 +20,7 @@ impl Circle {
         2.0 * self.radius * PI
     }
 
-    pub fn contains(&self, v: &Vector) -> bool {
+    pub fn contains(&self, v: Vector) -> bool {
         self.center.close_to(v, self.radius)
     }
 }

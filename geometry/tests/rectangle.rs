@@ -32,8 +32,8 @@ mod tests {
         };
         let point_inside = Vector(2.0, 3.0);
         let point_outside = Vector(6.0, 12.0);
-        assert!(rectangle.contains(&point_inside));
-        assert!(!rectangle.contains(&point_outside));
+        assert!(rectangle.contains(point_inside));
+        assert!(!rectangle.contains(point_outside));
     }
 
     #[test]

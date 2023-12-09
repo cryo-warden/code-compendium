@@ -93,7 +93,7 @@ mod tests {
     fn test_square_distance() {
         let v1 = Vector(1.0, 2.0);
         let v2 = Vector(4.0, 6.0);
-        let result = v1.square_distance(&v2);
+        let result = v1.square_distance(v2);
         assert_eq!(result, 25.0);
     }
 
@@ -101,7 +101,7 @@ mod tests {
     fn test_distance() {
         let v1 = Vector(5.0, 10.0);
         let v2 = Vector(15.0, 20.0);
-        let result = v1.distance(&v2);
+        let result = v1.distance(v2);
         assert_eq!(result, 200.0f32.sqrt());
     }
 
@@ -109,8 +109,8 @@ mod tests {
     fn test_close_to() {
         let v1 = Vector(1.0, 2.0);
         let v2 = Vector(4.0, 6.0);
-        assert!(!v1.close_to(&v2, 4.5));
-        assert!(v1.close_to(&v2, 5.0));
+        assert!(!v1.close_to(v2, 4.5));
+        assert!(v1.close_to(v2, 5.0));
     }
 
     #[test]

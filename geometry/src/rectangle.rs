@@ -1,5 +1,6 @@
 use std::fmt::{Display, Formatter, Result};
 
+use crate::BoundingBox;
 use crate::Vector;
 
 #[derive(Debug, PartialEq, Copy, Clone)]
@@ -18,9 +19,16 @@ impl Rectangle {
         2.0 * (self.width + self.height)
     }
 
-    pub fn contains(&self, v: &Vector) -> bool {
-        2.0 * (v.0 - self.center.0).abs() <= self.width
-            && 2.0 * (v.1 - self.center.1).abs() <= self.height
+    pub fn contains(&self, v: Vector) -> bool {
+        let offset = v - self.center;
+        2.0 * offset.0.abs() <= self.width && 2.0 * offset.1.abs() <= self.height
+    }
+
+    pub fn bounding_box(&self) -> BoundingBox {
+        let half_dimensions = Vector(self.width, self.height) / 2.0;
+        let min = self.center - half_dimensions;
+        let max = self.center + half_dimensions;
+        BoundingBox::new(min.0, min.1, max.0, max.1)
     }
 }
 

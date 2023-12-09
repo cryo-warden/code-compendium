@@ -7,20 +7,23 @@ fn main() {
     println!("{}", a);
     println!("{}", b);
 
-    a = a.add(&b);
+    a += b;
     println!("{}", a);
 
-    a = a.multiply(&b);
+    a *= b;
     println!("{}", a);
 
-    a = a.scale(2.0);
+    a *= 2.0;
     println!("{}", a);
 
-    a = a.subtract(&b);
+    a /= 2.0;
+    println!("{}", a);
+
+    a -= b;
     println!("{}", a);
     println!("{}", b);
 
-    a = a.subtract(&Vector(1.0, 1.0));
+    a -= Vector(1.0, 1.0);
     println!("{}", a.magnitude());
     println!("{}", a);
     println!("{}", b);
@@ -31,13 +34,13 @@ fn main() {
     };
     println!("{}", c);
 
-    c.center = c.center.add(&b);
+    c.center += b;
     println!("{}", c.area());
     println!("{}", c);
-    println!("{}", c.center.distance(&Vector(2.0, 4.0)));
-    println!("{}", c.contains(&Vector(2.0, 4.0)));
-    println!("{}", c.center.distance(&Vector(8.0, 24.0)));
-    println!("{}", c.contains(&Vector(8.0, 24.0)));
+    println!("{}", c.center.distance(Vector(2.0, 4.0)));
+    println!("{}", c.contains(Vector(2.0, 4.0)));
+    println!("{}", c.center.distance(Vector(8.0, 24.0)));
+    println!("{}", c.contains(Vector(8.0, 24.0)));
     println!("{}", c);
 
     let mut r = Rectangle {
@@ -48,7 +51,7 @@ fn main() {
 
     println!("{}", r);
 
-    r.center = r.center.add(&Vector(3.0, 9.0));
+    r.center += Vector(3.0, 9.0);
 
     println!("{}", r);
 

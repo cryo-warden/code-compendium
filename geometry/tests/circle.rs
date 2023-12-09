@@ -32,10 +32,10 @@ mod tests {
             radius,
             center: Vector(3.0, 4.0),
         };
-        assert!(circle.contains(&Vector(1.0, 2.0)));
-        assert!(circle.contains(&Vector(3.0, 11.0)));
-        assert!(!circle.contains(&Vector(3.0, 11.5)));
-        assert!(!circle.contains(&Vector(8.0, 9.0)));
+        assert!(circle.contains(Vector(1.0, 2.0)));
+        assert!(circle.contains(Vector(3.0, 11.0)));
+        assert!(!circle.contains(Vector(3.0, 11.5)));
+        assert!(!circle.contains(Vector(8.0, 9.0)));
     }
 
     #[test]
