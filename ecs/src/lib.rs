@@ -1,5 +1,6 @@
+extern crate ecs_macros;
+
 pub mod components;
 pub mod systems;
-mod world;
-
-pub use world::World;
+#[macro_use]
+pub mod world;
