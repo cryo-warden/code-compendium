@@ -3,9 +3,10 @@ use crate::components::{Position, Velocity};
 pub struct MovementSystem {}
 
 impl MovementSystem {
-    pub fn update(&self, positions: &mut Vec<Position>, velocities: &mut Vec<Velocity>) {
-        // TODO Need to implement matching for related components.
-        dbg!(positions);
-        dbg!(velocities);
+    pub fn update(&self, components: &mut Vec<(&mut Position, &mut Velocity)>) {
+        for (ref mut position, ref mut velocity) in components.iter_mut() {
+            position.position += velocity.velocity;
+        }
+        dbg!(components);
     }
 }
