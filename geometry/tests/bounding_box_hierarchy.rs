@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use geometry::{BoundingBox, BoundingBoxHierarchy};
+    use geometry::prelude::*;
 
     fn get_brute_force_touched_values(
         bounding_boxes: &Vec<BoundingBox>,

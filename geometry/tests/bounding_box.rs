@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use geometry::BoundingBox;
+    use geometry::prelude::*;
 
     #[test]
     fn test_bounding_box_area() {

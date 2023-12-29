@@ -1,7 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use geometry::Rectangle;
-    use geometry::Vector;
+    use geometry::prelude::*;
 
     #[test]
     fn test_rectangle_area() {

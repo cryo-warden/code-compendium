@@ -1,4 +1,4 @@
-use geometry::{BoundingBox, BoundingBoxHierarchy, Circle, Rectangle, Vector};
+use geometry::prelude::*;
 
 fn main() {
     let mut a = Vector(5.0, 5.0);

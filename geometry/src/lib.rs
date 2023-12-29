@@ -4,8 +4,12 @@ mod circle;
 mod rectangle;
 mod vector;
 
-pub use bounding_box::BoundingBox;
-pub use bounding_box_hierarchy::BoundingBoxHierarchy;
-pub use circle::Circle;
-pub use rectangle::Rectangle;
-pub use vector::Vector;
+pub use bounding_box::*;
+pub use bounding_box_hierarchy::*;
+pub use circle::*;
+pub use rectangle::*;
+pub use vector::*;
+
+pub mod prelude {
+    pub use crate::*;
+}

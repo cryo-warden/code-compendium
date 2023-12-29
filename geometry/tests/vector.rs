@@ -1,6 +1,6 @@
 #[cfg(test)]
 mod tests {
-    use geometry::Vector;
+    use geometry::prelude::*;
 
     #[test]
     fn test_add() {

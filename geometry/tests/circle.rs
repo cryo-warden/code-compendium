@@ -2,8 +2,7 @@
 mod tests {
     use std::f32::consts::PI;
 
-    use geometry::Circle;
-    use geometry::Vector;
+    use geometry::prelude::*;
 
     #[test]
     fn test_circle_area() {
