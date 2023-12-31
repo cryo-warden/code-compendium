@@ -1,0 +1,20 @@
+.Button {
+  display: inline-block;
+  background: #111;
+  border-radius: 1em;
+  color: white;
+  padding: 1em;
+  font-weight: bold;
+  border: solid 2px #222;
+  user-select: none;
+
+  &:hover {
+    border-color: #333;
+  }
+
+  &:active {
+    background-color: #000;
+    border-color: #444;
+    transform: translateY(2px);
+  }
+}

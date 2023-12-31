@@ -1,0 +1,38 @@
+.App {
+  & * {
+    overflow: hidden;
+  }
+
+  font-size: clamp(50%, 50% + 1vw, 100%);
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-areas:
+    "header      header header"
+    "left-gutter body   right-gutter";
+  grid-template-columns: auto clamp(320px, 320px + 60vw, 100vw) auto;
+  grid-template-columns: auto clamp(320px, 320px + 60svw, 100svw) auto;
+  grid-template-rows: 2em auto;
+
+  & > .header {
+    grid-area: header;
+    background-color: black;
+    padding: 0.5em;
+    text-align: center;
+  }
+
+  & > .body {
+    grid-area: body;
+    background-color: black;
+    box-shadow: black 0 0 20px 20px;
+    text-align: center;
+  }
+
+  & > .left-gutter {
+    grid-area: left-gutter;
+  }
+
+  & > .right-gutter {
+    grid-area: right-gutter;
+  }
+}
